@@ -35,3 +35,34 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+=======
+Agency Jekyll theme
+====================
+
+Agency theme based on [Agency bootstrap theme ](http://startbootstrap.com/templates/agency/)
+
+# How to use
+
+###Portfolio 
+
+Portfolio projects are in '/_posts'
+
+Images are in '/img/portfolio'
+
+###About
+
+Images are in '/img/about/'
+
+###Team
+
+Team members and info are in '_config.yml'
+
+Images are in '/img/team/'
+
+
+# Demo
+
+View this jekyll theme in action [here](https://y7kim.github.io/agency-jekyll-theme)
+
+=========
+For more details, read [documentation](http://jekyllrb.com/)
