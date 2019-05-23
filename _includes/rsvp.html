@@ -1,17 +1,52 @@
-    <section id="rsvp">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div style="text-align: center">
-                        <img class="header-img" src="../img/flowers1-2.png" style="width: 300px; height: auto" />
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">RSVP</h2>
-                    <div id='glo'></div><script src="https://glosite.com/javascripts/widget.js"></script><script>GloWidget = {};GloWidget.apiKey = '14c4e09a676816fa44a4e4af9f3dab4f88ddc332';</script>
+<section id="rsvp">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div style="text-align: center">
+                    <img class="header-img" src="../img/flowers1-2.png" style="width: 300px; height: auto" />
                 </div>
             </div>
         </div>
-    </section>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">RSVP</h2>
+                <form name="rsvp">
+                    <div class="form-group">
+                        <label for="code"></label>
+                        <input id="code" name="code" type="text" placeholder="rsvp code" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="count"></label>
+                        <input id="count" name="count" type="number" placeholder="number attending" required>
+                    </div>
+                    <div class="hidden">
+                        <div class="form-group">
+                            <label for="song1"></label>
+                            <input id="song1" name="song1" type="text" placeholder="song 1">
+                        </div>
+                        <div class="form-group">
+                            <label for="song2"></label>
+                            <input id="song2" name="song2" type="text" placeholder="song 2">
+                        </div>
+                    </div>
+                    <button type="submit">Send</button>
+                </form>
+
+                <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+                <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+                <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
+                <script>
+                    const scriptURL = 'https://script.google.com/macros/s/AKfycbx1Y6rTo5gY07qBuHEdlM_qfJDBTNVSxg0M0I9JTMJ-JWozWJiP/exec'
+                    const form = document.forms['rsvp']
+
+                    form.addEventListener('submit', e => {
+                        e.preventDefault()
+                        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                            .then(response => console.log('Success!', response))
+                            .catch(error => console.error('Error!', error.message))
+                    })
+                </script>
+            </div>
+        </div>
+    </div>
+</section>
